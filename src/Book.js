@@ -14,6 +14,7 @@ class Book extends React.Component {
     }
 
     render() {
+      const authors = this.props.book.authors || []
       const style = {
         width: 128,
         height: 193,
@@ -35,7 +36,7 @@ class Book extends React.Component {
             </div>
           </div>
           <div className="book-title">{this.props.book.title}</div>
-          {this.props.book.authors.map((author, index) => (<div key={index} className="book-authors">{author}</div>))}
+          {authors.map((author, index) => (<div key={index} className="book-authors">{author}</div>))}
         </div>
       )
     }
